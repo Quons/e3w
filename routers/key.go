@@ -2,6 +2,7 @@ package routers
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/sirupsen/logrus"
 	"github.com/soyking/e3ch"
 )
 
@@ -28,8 +29,9 @@ func getKeyHandler(c *gin.Context, client *client.EtcdHRCHYClient) (interface{},
 		if err != nil {
 			return nil, err
 		}
+		logrus.Infof("nodes：%+v", nodes)
 
-		realNodes := []*Node{}
+		var realNodes []*Node
 		for _, node := range nodes {
 			realNodes = append(realNodes, parseNode(node))
 		}
