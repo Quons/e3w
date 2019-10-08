@@ -4,6 +4,7 @@ import (
 	"github.com/coreos/etcd/clientv3"
 	"github.com/coreos/etcd/etcdserver/etcdserverpb"
 	"github.com/gin-gonic/gin"
+	"github.com/sirupsen/logrus"
 )
 
 const (
@@ -26,9 +27,10 @@ func getMembersHandler(c *gin.Context, client *clientv3.Client) (interface{}, er
 	if err != nil {
 		return nil, err
 	}
-
+	logrus.Infof("resp：%+v", resp.Members)
 	var members []*Member
 	for _, member := range resp.Members {
+
 		if len(member.ClientURLs) > 0 {
 			m := &Member{Member: member, Role: ROLE_FOLLOWER, Status: STATUS_UNHEALTHY}
 			resp, err := client.Status(newEtcdCtx(), m.ClientURLs[0])
