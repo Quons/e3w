@@ -86,4 +86,4 @@ Install dependencies in 3.b, then run `docker build -t soyking/e3w .`
 
 	When `userA` was granted `roleA`, `userA` could open the by `http://e3w-address.com/#/kv/dir1/dir2` to view and edit the key/value
 
-- Access key/value by etcdctl, [issue](https://github.com/soyking/e3w/issues/3). But the best way to access key/value is using [e3ch](https://github.com/soyking/e3ch).
+- Access key/value by etcdctl, [issue](https://e3w/issues/3). But the best way to access key/value is using [e3ch](https://github.com/soyking/e3ch).

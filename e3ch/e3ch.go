@@ -2,10 +2,10 @@ package e3ch
 
 import (
 	"crypto/tls"
+	"e3w/conf"
 	"github.com/coreos/etcd/clientv3"
 	"github.com/coreos/etcd/pkg/transport"
-	"github.com/soyking/e3ch"
-	"github.com/soyking/e3w/conf"
+	client "github.com/soyking/e3ch"
 )
 
 func NewE3chClient(config *conf.Config) (*client.EtcdHRCHYClient, error) {

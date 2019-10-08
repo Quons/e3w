@@ -15,7 +15,7 @@ RUN npm --registry=https://registry.npm.taobao.org \
 
 FROM alpine:latest
 RUN mkdir -p /app/static/dist /app/conf
-COPY --from=backend /go/src/github.com/soyking/e3w/e3w /app
+COPY --from=backend /go/src/e3w/e3w /app
 COPY --from=frontend /app/dist /app/static/dist
 COPY conf/config.default.ini /app/conf
 EXPOSE 8080

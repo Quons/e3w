@@ -27,7 +27,7 @@ func getMembersHandler(c *gin.Context, client *clientv3.Client) (interface{}, er
 		return nil, err
 	}
 
-	members := []*Member{}
+	var members []*Member
 	for _, member := range resp.Members {
 		if len(member.ClientURLs) > 0 {
 			m := &Member{Member: member, Role: ROLE_FOLLOWER, Status: STATUS_UNHEALTHY}

@@ -1,13 +1,13 @@
 package main
 
 import (
+	"e3w/conf"
+	"e3w/e3ch"
+	"e3w/routers"
 	"flag"
 	"fmt"
 	"github.com/coreos/etcd/version"
 	"github.com/gin-gonic/gin"
-	"github.com/soyking/e3w/conf"
-	"github.com/soyking/e3w/e3ch"
-	"github.com/soyking/e3w/routers"
 	"os"
 )
 
