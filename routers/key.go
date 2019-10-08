@@ -23,7 +23,7 @@ func parseNode(node *client.Node) *Node {
 func getKeyHandler(c *gin.Context, client *client.EtcdHRCHYClient) (interface{}, error) {
 	_, list := c.GetQuery("list")
 	key := c.Param("key")
-
+	logrus.Infof("list：%+v", list)
 	if list {
 		nodes, err := client.List(key)
 		if err != nil {
